@@ -1,5 +1,5 @@
-import {readFileSync} from 'fs';
 import path = require('path');
+import {getInputAsArray} from '../util/fileHandler';
 
 export function getMaxCalories(): number {
   const caloriesArr = getSortedCaloriesArr();
@@ -25,12 +25,11 @@ export function getTopThreeCalories(): number {
 }
 
 function getSortedCaloriesArr() {
-  const data = readFileSync(path.resolve(__dirname, './input.txt'), 'utf-8');
-  const dataArr = data.split(/\n/g);
+  const input = getInputAsArray(path.resolve(__dirname, './input.txt'));
   const totalCaloriesArr = [];
   let current = 0;
 
-  for (const calories of dataArr) {
+  for (const calories of input) {
     if (!calories) {
       totalCaloriesArr.push(current);
       current = 0;

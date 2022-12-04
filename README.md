@@ -8,5 +8,5 @@ Specify the day you are trying to solve in the `solve` command.
 
 `npm run solve -- --day=day<number>`
 
-The empty arguement before `--day=...` is required, otherwise the command is passed to npm and not the script.
+The empty argument before `--day=...` is required, otherwise the command is passed to npm and not the script.
 
