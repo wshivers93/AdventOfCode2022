@@ -7,6 +7,7 @@ import {
   getOverlappedAssignments,
 } from './day4/analyzeAssignments';
 import {getTopOfStacks, getTopOfStacks9001} from './day5/moveStacks';
+import {analyzePackets} from './day6/analyzePackets';
 
 const args = minimist(process.argv.slice(2));
 const day = args['day'];
@@ -47,6 +48,14 @@ switch (day) {
   case 'day5': {
     const part1 = getTopOfStacks();
     const part2 = getTopOfStacks9001();
+    console.log(`Part 1: ${part1}`);
+    console.log(`Part 2: ${part2}`);
+
+    break;
+  }
+  case 'day6': {
+    const part1 = analyzePackets(4);
+    const part2 = analyzePackets(14);
     console.log(`Part 1: ${part1}`);
     console.log(`Part 2: ${part2}`);
 
